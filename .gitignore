@@ -1,0 +1,14 @@
+################################################
+# .gitignore for Computer Forensics Project      #
+# Author Barth O'Keeffe 14180847              #
+# Date  22/02/2018                             #
+################################################
+
+
+# Compiled source #
+###################
+*.o
+
+#sample hard-disk#
+##################
+*.dd

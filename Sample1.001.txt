@@ -1,0 +1,41 @@
+﻿Created By AccessData® FTK® Imager 2.9.0.1385 100406
+
+Case Information: 
+Case Number: 6012
+Evidence Number: ee6012
+Unique description: Experimental
+Examiner: DH
+Notes: None
+
+--------------------------------------------------------------
+
+Information for C:\Users\Donal\Desktop\DD\Sample1:
+
+Physical Evidentiary Item (Source) Information:
+[Drive Geometry]
+ Cylinders: 123
+ Tracks per Cylinder: 255
+ Sectors per Track: 63
+ Bytes per Sector: 512
+ Sector Count: 1,982,464
+[Physical Drive Information]
+ Drive Model: PEAK III Flash Drive USB Device
+ Drive Serial Number: 
+ Drive Interface Type: USB
+ Source data size: 968 MB
+ Sector count:    1982464
+[Computed Hashes]
+ MD5 checksum:    3531c3e26ea19048de7b20144f17cc3a
+ SHA1 checksum:   275da736105fb97bdfc68a4c6a20c061d852b24f
+
+Image Information:
+ Acquisition started:   Sat Feb 19 17:12:39 2011
+ Acquisition finished:  Sat Feb 19 17:14:27 2011
+ Segment list:
+  C:\Users\Donal\Desktop\DD\Sample1.001
+
+Image Verification Results:
+ Verification started:  Sat Feb 19 17:14:28 2011
+ Verification finished: Sat Feb 19 17:14:41 2011
+ MD5 checksum:    3531c3e26ea19048de7b20144f17cc3a : verified
+ SHA1 checksum:   275da736105fb97bdfc68a4c6a20c061d852b24f : verified
