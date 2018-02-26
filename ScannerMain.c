@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
         printf("Total number of sectors          :\t\t %d\n",fat.Num_sectors);
         printf("Sector size is                   :\t\t %d\n",fat.sector_size);
         printf("Total Size of FAT area is        :\t\t %d\n",fat.FAT_size);
-        printf("Maxium number of root enteries is:\t\t %s\n",fat.Max_root_enteries);
+        printf("Maxium number of root enteries is:\t\t %d\n",fat.Max_root_enteries);
         printf("OEM Name is                      :\t\t %s\n",fat.OEM_Name);
         fclose(fp);
         return (0);
