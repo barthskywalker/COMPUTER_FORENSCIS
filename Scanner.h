@@ -34,7 +34,7 @@ struct FAT {
         int Num_sectors;
         int sector_size;
         int FAT_size;
-        char * Max_root_enteries;
+        int Max_root_enteries;
         int rootSize;
         char* OEM_Name;
 
