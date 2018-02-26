@@ -47,4 +47,5 @@ void getFatinfo();
 char* concat(const char *s1, const char *s2);
 void print_Header(char* s);
 char* getOEM(const char *s1);
+void getFileFromFatInfo();
 #endif

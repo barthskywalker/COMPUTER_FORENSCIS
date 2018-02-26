@@ -15,7 +15,11 @@ char* concat(const char *s1, const char *s2)
     return result;
 }
 
-
+/**
+ * prints the OEM name to the screen
+ * @param  s1 pointer to start of OEM
+ * @return    returns full oem name
+ */
 char* getOEM(const char *s1){
   char* oem;
   oem=concat((s1 + 0x03),(s1 + 0x04));
@@ -26,4 +30,16 @@ char* getOEM(const char *s1){
   oem=concat(oem,(s1 + 0x09));
   oem=concat(oem,(s1 + 0x0A));
   return oem;
+}
+
+/**
+ * print out headers
+ * @param s [description]
+ */
+void print_Header(char* s){
+
+        printf("///////////////////////////////////////////////////////\n");
+        printf("//            %s                //\n",  s);
+        printf("///////////////////////////////////////////////////////\n");
+
 }
