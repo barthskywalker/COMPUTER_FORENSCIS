@@ -35,6 +35,7 @@ void getFatinfo(){
         fat.sector_size = size_of_a_sector1;
 
         /*Root dir size = ( max no. of dir entries) * (dir entry size in bytes) / sector size*/
+        fat.rootSize=fat.Max_root_enteries*32/fat.sector_size;
         fat.OEM_Name=getOEM(buf_part_table);
 }
 /**
