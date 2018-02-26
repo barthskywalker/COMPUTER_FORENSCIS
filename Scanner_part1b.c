@@ -37,6 +37,20 @@ void getFatinfo(){
         /*Root dir size = ( max no. of dir entries) * (dir entry size in bytes) / sector size*/
         fat.rootSize=fat.Max_root_enteries*32/fat.sector_size;
         fat.OEM_Name=getOEM(buf_part_table);
+        /*
+        Sector address (Data Area)
+        = (first sector of volume) + (size of reserved area) + (size of FAT Area)
+         */
+        //get siye of reserved Area
+        // char reserved_buff[4];
+        // fseek(fp, startsect+0x0E, SEEK_SET); // Seek to the start of the part_entry list
+        // fread(reserved_buff, 1, 4, fp);
+         int reserved_Area =*(buf_part_table + 0x0E);
+         int Sector_address_Data_Area= part_entry[0].start_sect +reserved_Area +fat.FAT_size;
+        /*
+        Cluster #2 address = ( first sector of data area ) + ( size of root directory)
+         */
+        fat.address_of_Cluster_2=Sector_address_Data_Area + fat.rootSize;
 }
 /**
  * print out headers

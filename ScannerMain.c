@@ -51,6 +51,7 @@ int main(int argc, char *argv[])
         printf("Maxium number of root enteries is:\t\t %d\n",fat.Max_root_enteries);
         printf("Root directory size is           :\t\t %d sectors\n",fat.rootSize);
         printf("OEM Name is                      :\t\t %s\n",fat.OEM_Name);
+        printf("Address of Cluster #2            :\t\t %d\n",fat.address_of_Cluster_2);
         fclose(fp);
         return (0);
 

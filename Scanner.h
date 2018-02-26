@@ -37,6 +37,7 @@ struct FAT {
         int Max_root_enteries;
         int rootSize;
         char* OEM_Name;
+        int address_of_Cluster_2;
 
 } fat;
 /**
