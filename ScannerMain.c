@@ -41,6 +41,7 @@ int main(int argc, char *argv[])
                        part_entry[i].size);
         }
         getFatinfo();
+        getFileFromFatInfo();
         printf("\n\nThe total number of valid partitions is: %d\n\n", (4 - not_exist));
         print_Header("FAT file information");
         printf("\n");
@@ -50,7 +51,12 @@ int main(int argc, char *argv[])
         printf("Maxium number of root enteries is:\t\t %d\n", fat.Max_root_enteries);
         printf("Root directory size is           :\t\t %d sectors\n", fat.rootSize);
         printf("OEM Name is                      :\t\t %s\n", fat.OEM_Name);
+        printf("first sector of data area        :\t\t %d\n", fat.Sector_address_Data_Area);
         printf("Address of Cluster #2            :\t\t %d\n", fat.address_of_Cluster_2);
+        print_Header("File in root directory information");
+        printf("Name of Deleted file             :\t\t %s\n", DelFile.name);
+        printf("Starting cluster of Deleted file :\t\t %d\n", DelFile.Starting_cluster);
+        printf("Data contained in deleted file   :\t\t%s\n", DelFile.contents);
         fclose(fp);
         return (0);
 }

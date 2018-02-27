@@ -37,9 +37,17 @@ struct FAT
         int Max_root_enteries;
         int rootSize;
         char *OEM_Name;
+        int Sector_address_Data_Area;
         int address_of_Cluster_2;
 
 } fat;
+
+struct Deleted_file
+{
+        char* name;
+        char* contents;
+        int Starting_cluster;
+}DelFile;
 /**
  * Function declarations;
  */
