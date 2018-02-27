@@ -4,7 +4,6 @@
  * Date  16/02/2018
  */
 
-
 #ifndef Scanner_H
 #define Scanner_H
 
@@ -16,7 +15,7 @@
    globals
  */
 //File pionter
-FILE * fp;
+FILE *fp;
 
 /**
  * structure declarations
@@ -30,13 +29,14 @@ struct Partition
 /**
  * struct fat FILEsystem
  */
-struct FAT {
+struct FAT
+{
         int Num_sectors;
         int sector_size;
         int FAT_size;
         int Max_root_enteries;
         int rootSize;
-        char* OEM_Name;
+        char *OEM_Name;
         int address_of_Cluster_2;
 
 } fat;
@@ -44,8 +44,8 @@ struct FAT {
  * Function declarations;
  */
 void getFatinfo();
-char* concat(const char *s1, const char *s2);
-void print_Header(char* s);
-char* getOEM(const char *s1);
+char *concat(const char *s1, const char *s2);
+void print_Header(char *s);
+char *getOEM(const char *s1);
 void getFileFromFatInfo();
 #endif
