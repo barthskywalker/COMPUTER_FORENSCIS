@@ -83,9 +83,9 @@ void getFileFromFatInfo()
         int CSA =fat.address_of_Cluster_2 +((DelFile.Starting_cluster-2)*8);
         int start_of_deleted_data=fat.sector_size*CSA;
         //create temperory buffer to store first 16 characters
-        char temp_buff2[16];
+        char temp_buff2[200];
         fseek(fp, start_of_deleted_data, SEEK_SET); // Seek to first 16 characters
-        fread(temp_buff2, 1, 16, fp);//read in first 16 characters
+        fread(temp_buff2, 1, 200, fp);//read in first 16 characters
         DelFile.contents=malloc(strlen(temp_buff2)+1);//make sure structure can hold data
         DelFile.contents=strcpy(DelFile.contents,temp_buff2);//copy data to structure
       }
