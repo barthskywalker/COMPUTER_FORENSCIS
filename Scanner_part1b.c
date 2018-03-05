@@ -66,7 +66,6 @@ void getFileFromFatInfo()
               //  printf("%x\n",*root_buff+i);
                 if(*root_buff+i==0xE5){
                 location_of_deleted_file_name=i;
-                printf("%d\n%d\n", location_of_deleted_file_name,start);
               }
         }
         //root_buff+location_of_deleted_file_name-(11*8) to return to the start of the filename
