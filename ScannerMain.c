@@ -1,5 +1,15 @@
-// MiniPart.c D. Heffernan 15/Nov/2016
+/**
+ * ScannerMain.c file for Computer Forensics Project
+ * StudentName&ID: Barth O'Keeffe    14180847 
+ *                 Mark O’Neill      14117711
+ *                 Lina Albay        14118432
+ * Lecturer:       Dr. Jacqueline Walker
+ * Date  16/02/2018
+ */
+////////////////////////////////////////////////////////// 
+//ScannerMain.c 
 /////////////////////////////////////////////////////////
+
 #include "Scanner.h"
 int main(int argc, char *argv[])
 {

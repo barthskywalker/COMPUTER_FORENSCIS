@@ -1,6 +1,10 @@
 /**
  * Header file for Computer Forensics Project
- * Authour Barth O'Keeffe 14180847
+ * StudentName&ID: Barth O'Keeffe    14180847 
+ *                 Mark O’Neill      14117711
+ *                 Lina Albay        14118432
+ * Lecturer:       Dr. Jacqueline Walker
+
  * Date  16/02/2018
  */
 
