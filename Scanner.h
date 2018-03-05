@@ -41,11 +41,14 @@ struct FAT
         int address_of_Cluster_2;
 
 } fat;
-
+/**
+ * structure to store deleted file info
+ */
 struct Deleted_file
 {
         char* name;
         char* contents;
+        int file_size;
         int Starting_cluster;
 }DelFile;
 /**

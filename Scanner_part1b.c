@@ -70,12 +70,12 @@ void getFileFromFatInfo()
               }
         }
         //root_buff+location_of_deleted_file_name-(11*8) to return to the start of the filename
-        int start_point=location_of_deleted_file_name-(11*8);
-        DelFile.name=root_buff+start_point;
+        int start_point_for_name=location_of_deleted_file_name-(11*8);
+        DelFile.name=root_buff+start_point_for_name;
         /*
         get starting cluster
          */
-        int Starting_cluster1 = *(root_buff+start_point+0x1A);
+        int Starting_cluster1 = *(root_buff+start_point_for_name+0x1A);
         DelFile.Starting_cluster=Starting_cluster1;
         /*
         CSA = (sector address for Cluster #2) + ( (cluster number – 2) * 8 )
@@ -88,4 +88,5 @@ void getFileFromFatInfo()
         fread(temp_buff2, 1, 200, fp);//read in first 16 characters
         DelFile.contents=malloc(strlen(temp_buff2)+1);//make sure structure can hold data
         DelFile.contents=strcpy(DelFile.contents,temp_buff2);//copy data to structure
+      
       }
