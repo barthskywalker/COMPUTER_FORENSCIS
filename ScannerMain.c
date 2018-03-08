@@ -1,13 +1,13 @@
 /**
  * ScannerMain.c file for Computer Forensics Project
- * StudentName&ID: Barth O'Keeffe    14180847 
+ * StudentName&ID: Barth O'Keeffe    14180847
  *                 Mark O’Neill      14117711
  *                 Lina Albay        14118432
  * Lecturer:       Dr. Jacqueline Walker
  * Date  16/02/2018
  */
-////////////////////////////////////////////////////////// 
-//ScannerMain.c 
+//////////////////////////////////////////////////////////
+//ScannerMain.c
 /////////////////////////////////////////////////////////
 
 #include "Scanner.h"
@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
         fp = fopen(argv[1], "rb");        // Open file for reading - binary mode. Should use error check!
         fseek(fp, 0x1BE, SEEK_SET);       // Seek to the start of the part_entry list
         fread(buf_part_table, 1, 64, fp); // Read the 64-byte block to memory buffer
-        print_Header("Content of Master Boot Record");
+        print_Header("   Content of Master Boot Record  ");
         for (i = 0; i < 4; i++)
         {
                 part_entry[i].type = *(char *)(buf_part_table + 0x04 + (i * offset));
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
         getFatinfo();
         getFileFromFatInfo();
         printf("\n\nThe total number of valid partitions is: %d\n\n", (4 - not_exist));
-        print_Header("FAT file information");
+        print_Header("       FAT file information       ");
         printf("\n");
         printf("Total number of sectors          :\t\t %d\n", fat.Num_sectors);
         printf("Sector size is                   :\t\t %d bytes\n", fat.sector_size);
