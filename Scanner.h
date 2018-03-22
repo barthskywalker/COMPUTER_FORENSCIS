@@ -1,6 +1,6 @@
 /**
  * Header file for Computer Forensics Project
- * StudentName&ID: Barth O'Keeffe    14180847 
+ * StudentName&ID: Barth O'Keeffe    14180847
  *                 Mark O’Neill      14117711
  *                 Lina Albay        14118432
  * Lecturer:       Dr. Jacqueline Walker
@@ -63,4 +63,5 @@ char *concat(const char *s1, const char *s2);
 void print_Header(char *s);
 char *getOEM(const char *s1);
 void getFileFromFatInfo();
+void getNFTS_INFO();
 #endif

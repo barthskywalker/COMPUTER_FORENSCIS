@@ -4,15 +4,15 @@
 # StudentName&ID: Barth O'Keeffe    14180847   #
 #                 Mark O’Neill      14117711   #
 #                 Lina Albay        14118432   #
-# Lecturer:       Dr. Jacqueline Walker        #    
+# Lecturer:       Dr. Jacqueline Walker        #
 # Date  16/02/2018                             #
 ################################################
 
 HEADER  = Scanner.h
 
 #command to link objects and create excutable
-Scanner: ScannerMain.o functions.o Scanner_part1b.o
-	gcc -o Scanner ScannerMain.o functions.o Scanner_part1b.o
+Scanner: ScannerMain.o functions.o Scanner_part1b.o Scanner_part1c.o
+	gcc -o Scanner ScannerMain.o functions.o Scanner_part1b.o Scanner_part1c.o
 	make clean
 
 #compile additional source files into object file
@@ -24,6 +24,10 @@ functions.o: functions.c
 #compile Scanner_part1b.c file
 Scanner_part1b.o: Scanner_part1b.c
 	gcc -Wall -ggdb -c Scanner_part1b.c
+
+#compile Scanner_part1b.c file
+Scanner_part1c.o: Scanner_part1c.c
+	gcc -Wall -ggdb -c Scanner_part1c.c
 
 # compile main application file
 ScannerMain.o: ScannerMain.c
