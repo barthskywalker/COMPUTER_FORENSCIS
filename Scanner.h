@@ -15,6 +15,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+
 /*
    globals
  */
@@ -55,6 +56,19 @@ struct Deleted_file
         int file_size;
         int Starting_cluster;
 }DelFile;
+
+/**
+ * struct NFTS FILEsystem
+ */
+struct NFTS
+{
+        int Num_sectors;
+        int sectors_per_cluster;
+        int cluster_number_of_MFT;
+        int address_of_MFT;
+
+} nfts;
+
 /**
  * Function declarations;
  */
