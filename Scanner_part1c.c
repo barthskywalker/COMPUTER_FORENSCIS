@@ -40,30 +40,29 @@ void getNFTS_INFO(){
 
   }
 nfts.cluster_number_of_MFT=num;
-//address of MFT = (cluster_number_of_MFT * 8 * 512)
-nfts.address_of_MFT= nfts.cluster_number_of_MFT * 8 *512 +startsect;
+//address of MFT = (cluster_number_of_MFT * nfts.sectors_per_cluster * nfts.sectors_per_cluster)
+nfts.address_of_MFT= nfts.cluster_number_of_MFT * nfts.Num_sectors * nfts.sectors_per_cluster +startsect;
 
 
 //What is the type and length of the first two attributes in the $MFT record
-/**
- * (1)Standard Information	- Includes information such as timestamp and link count.= 64b
- * (2)Attribute List	- Lists the location of all attribute records that do not fit in the MFT record.
- */
-char Standard_Information[64];
+
+char Standard_Information[400];
  fseek(fp, nfts.address_of_MFT, SEEK_SET); // Seek to the start $MFT
- fread(Standard_Information, 1, 64, fp);
- long unsigned int test=0;
- for(int i=7;i>-1;i--){
-   int a =(*(Standard_Information+i))>>4;
-   int b= *(Standard_Information+i)^(a<<4);
-   printf("%d", b<<4 |a );
-   test|=((int)Standard_Information[i])<<8;
-   test<<=4;
- }
-
-  printf("\n\n%lx\n\n",test);
- for(int i=8;i<15;i++){
-   printf("%d", Standard_Information[i]);
- }
-
+ fread(Standard_Information, 1, 400, fp);
+ /*
+ start of first MFT attribute
+  */
+ int first_MFT_attribute_offset= *(Standard_Information+0x14);
+ //get Attribute type identifier of first attribute
+ int Attribute_type_identifier= *(Standard_Information+first_MFT_attribute_offset);
+ //copy its string value to NFTS structure
+ MFT_attribute_type(Attribute_type_identifier,nfts.first_MFT_attribute_type);
+ //get length of if offset got from Table N5: Data structure for a basic MFT record
+ nfts.first_MFT_attribute_length=*(Standard_Information+first_MFT_attribute_offset+4);
+ //first offset + first MFT attribute length = start of second
+ int Second_MFT_attribute_offset =first_MFT_attribute_offset+nfts.first_MFT_attribute_length;
+ //get value at offset
+ int Second_Attribute_type_identifier= *(Standard_Information+Second_MFT_attribute_offset);
+ MFT_attribute_type(Second_Attribute_type_identifier,nfts.second_MFT_attribute_type);
+ nfts.second_MFT_attribute_length=*(Standard_Information+Second_MFT_attribute_offset+4);
 }

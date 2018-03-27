@@ -25,7 +25,7 @@ functions.o: functions.c
 Scanner_part1b.o: Scanner_part1b.c
 	gcc -Wall -ggdb -c Scanner_part1b.c
 
-#compile Scanner_part1b.c file
+#compile Scanner_part1c.c file
 Scanner_part1c.o: Scanner_part1c.c
 	gcc -Wall -ggdb -c Scanner_part1c.c
 

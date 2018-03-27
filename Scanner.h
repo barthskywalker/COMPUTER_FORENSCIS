@@ -55,7 +55,7 @@ struct Deleted_file
         char* contents;
         int file_size;
         int Starting_cluster;
-}DelFile;
+} DelFile;
 
 /**
  * struct NFTS FILEsystem
@@ -66,6 +66,10 @@ struct NFTS
         int sectors_per_cluster;
         int cluster_number_of_MFT;
         int address_of_MFT;
+        char first_MFT_attribute_type[24];
+        int first_MFT_attribute_length;
+        char second_MFT_attribute_type[24];
+        int second_MFT_attribute_length;
 
 } nfts;
 
@@ -78,4 +82,5 @@ void print_Header(char *s);
 char *getOEM(const char *s1);
 void getFileFromFatInfo();
 void getNFTS_INFO();
+void MFT_attribute_type(int type, char strtype[24]);
 #endif
