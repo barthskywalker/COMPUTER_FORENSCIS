@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
         printf("Name of Deleted file                   :\t\t %s\n", DelFile.name);
         printf("Starting cluster of Deleted file       :\t\t %d\n", DelFile.Starting_cluster);
         printf("Data contained in deleted file         :\t\t%s\n", DelFile.contents);
-        print_Header("       NFTS file information       ");
+        print_Header("      NFTS file information       ");
         printf("Total bytes per sector for NTFS volume :\t\t %d\n", nfts.Num_sectors);
         printf("Sectors per cluster for NTFS volume    :\t\t %d\n", nfts.sectors_per_cluster);
         printf("Address of MFT                         :\t\t %d bytes\n", nfts.address_of_MFT);
@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
         printf("First MFT attribute type               :\t\t %s\n", nfts.first_MFT_attribute_type);
         printf("First MFT attribute length             :\t\t %d bytes\n", nfts.first_MFT_attribute_length);
         printf("Second MFT attribute type              :\t\t %s\n", nfts.second_MFT_attribute_type);
-        printf("Second MFT attribute length             :\t\t %d bytes\n", nfts.second_MFT_attribute_length);
+        printf("Second MFT attribute length            :\t\t %d bytes\n", nfts.second_MFT_attribute_length);
 
         fclose(fp);
 
